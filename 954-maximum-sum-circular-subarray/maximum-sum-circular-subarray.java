@@ -5,13 +5,16 @@ class Solution {
         int maxSum = nums[0];
         int curMin = 0;
         int minSum = nums[0];
+        
         for (int num : nums) {
             totalSum += num;
+
             curMax = Math.max(curMax + num, num);
             maxSum = Math.max(maxSum, curMax);
             curMin = Math.min(curMin + num, num);
             minSum = Math.min(minSum, curMin);
         }
+
         if (maxSum < 0) {
             return maxSum;
         }
